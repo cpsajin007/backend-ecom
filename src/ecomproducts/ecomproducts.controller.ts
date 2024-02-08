@@ -31,7 +31,7 @@ export class EcomproductsController {
     return {products}
   }
   @Get('/search')
-  async search(@Query('q') query: string): Promise<{ products: Product[] }> {
+  async search(@Query('q') query: string){
     console.log("queryyyy",query)
     console.log("queryyyy",typeof(query))
     const products = await this.productsService.searchProducts(query);
